@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<globals>	
+	<!-- This is where you set your upload nameconflict value (OVERWRITE,MAKEUNIQUE)-->
+	<fileconflict>OVERWRITE</fileconflict>		
+	
+	<!-- These variables are paths to the components -->
+	<basecomponentpath>tardis_calendar.system.cfcomponents</basecomponentpath>
+	<cfcomponents>/tardis_calendar/system/cfcomponents/</cfcomponents>
+	
+	<!-- These variables are paths to the config files -->
+	<controllerconfigfile>controller-config.xml</controllerconfigfile>	
+	<datastoreconfigfile>datastore-config.xml</datastoreconfigfile>
+	<securityconfigfile>security-config.xml</securityconfigfile>	
+	<validationconfigfile>validation-config.xml</validationconfigfile>
+	<loggerconfigfile>logger-config.xml</loggerconfigfile>
+	
+	<!-- These variables are paths to the application -->
+	<virtualpath>/tardis_calendar/</virtualpath>	
+	<!-- This is where you would store UDF's -->
+	<cflibs>/tardis_calendar/system/cflibs/</cflibs>
+	<!-- This is where you would store customtags -->
+	<cftags>/tardis_calendar/system/cftags/</cftags>
+	<!-- This is where you would store layout pagelets -->
+	<cfpagelets>/tardis_calendar/system/cfpagelets/</cfpagelets>
+	<!-- This is where you would store cached files -->
+	<cfcache>/tardis_calendar/system/cfcache/</cfcache>	
+	<!-- This is where you would store cascading stylesheets -->
+	<css>/tardis_calendar/system/css/</css>	
+	<!-- This is where you would store javascript files -->
+	<js>/tardis_calendar/system/js/</js>	
+	
+	<!-- onError configuration -->
+	<!-- Send notification email onError - true/false -->
+	<errornotify>false</errornotify>
+	<!-- Error message mail to field - List of email addresses (comma delimited)-->
+	<errornotifyemails>shawn.gorrell@atl.frb.org</errornotifyemails>
+	<!-- Error message mail from field - string (email address) -->
+	<errornotifyfrom>shawn.gorrell@atl.frb.org</errornotifyfrom>	
+	<!-- Maximum number of error messages to be sent, to prevent spamming yourself - integer -->
+	<errornotifymaxmessages>5</errornotifymaxmessages>		
+	
+	<!-- These are application specific variables-->
+	<adminlist>f1kew22,f1clg24,k1ehk01,f1jsj22,f1law24,f1axl21,f1swg22,f1adm99,f1cfb79,f1dll79,f1dcs22,f6lxl02,f1dsr22,f1jbp24,f1dls22,f1axk97,f1tlu22</adminlist>
+	<dsn>tardis_calendar</dsn>
+	<appsecwsdl>https://appsecweb.atl.frb.org/ws/services/AppSecSysService?wsdl</appsecwsdl>	
+</globals>

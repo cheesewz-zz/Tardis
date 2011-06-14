@@ -1,0 +1,341 @@
+.normal{
+font: 10pt Arial,Verdana;
+color : #000000;
+}
+
+.title {
+font-family: Arial,Verdana;
+font-size: 12pt;
+font-weight:bold;
+color:  #000000;
+}
+.bold {
+font-family: Arial,Verdana;
+font-size: 11pt;
+font-weight:bold;
+color:  #000000;
+}
+
+.Name  
+{
+font-family : Arial;
+color : #CC9933;
+font-weight : 600;
+font-size : 18px;
+}
+.field  
+{
+	  font-family: Arial;
+	  color: #FFFFFF;
+	  font-weight: 500;
+	  font-size: 12px;
+}
+.fielddays  
+{
+	  font-family: Arial;
+	  color: #FFFFFF;
+	  font-weight: 500;
+	  font-size: 12px;
+	  text-decoration: none;
+}
+.fielddiv  
+{
+	  font-family: Arial;
+	  color: #9999CC;
+	  font-weight: 400;
+	  font-size: 10px;
+	  text-align: left;
+}
+.fielddept  
+{
+	  font-family: Arial;
+	  color: #663333;
+	  font-weight: 400;
+	  font-size: 10px;
+	  text-align: left;
+}
+.field1  
+{
+	  font-family: Arial;
+	  color: #CC9933;
+	  font-weight: 400;
+	  font-size: 10px;
+	  text-align: left;
+}
+.field2  
+{
+	  font-family: Arial;
+	  color: #663366;
+	  font-weight: 400;
+	  font-size: 10px;
+	  font-style: italic;
+	  text-align: left;
+}
+.BAfield2  
+{
+	  font-family: Arial;
+	  color: #663366;
+	  font-weight: 400;
+	  font-size: 10px;
+	  text-decoration: none;
+	  text-align: left;
+}  
+.field3  
+{
+	  font-family: Arial;
+	  color: #CCCCCC;
+	  font-weight: 700;
+	  font-size: 18px;
+	  text-decoration: none;
+}
+.field4  
+{
+	  font-family: Arial;
+	  color: #FFFFFF;
+	  font-weight: 600;
+	  font-size: 18px;
+}
+.field5  
+{
+	  font-family: Arial;
+	  color: #000000;
+	  font-weight: 400;
+	  font-size: 10px;
+	  text-decoration: none;
+	  text-align: right;
+}
+.smalltext  
+{
+	  font-family: Arial;
+	  color: #000000;
+	  font-weight: 400;
+	  font-size: 10px;
+	  text-decoration: none;
+	  text-align: left;
+}  
+.fielddetail 
+{
+  font-family: Arial;
+  color: #333366;
+  font-weight: 500;
+  font-size: 15px;
+}
+.fieldw 
+{
+	  font-family: Arial;
+	  color: #333366;
+	  font-weight: 600;
+	  font-size: 15px;
+}
+.fieldx 
+{
+	  font-family: Arial;
+	  color: #000000;
+	  font-weight: 600;
+	  font-size: 15px;
+	  text-decoration: none;
+}
+.fieldhelpy 
+{
+	  font-family: Arial;
+	  color: #000000;
+	  font-weight: 500;
+	  font-size: 14px;
+	  text-decoration: none;
+}  
+.fieldberry 
+{
+	  font-family: Arial;
+	  color: #663366;
+	  font-weight: 500;
+	  font-size: 14px;
+}
+.fieldberrybold 
+{
+	  font-family:Arial;
+	  color: #663366;
+	  font-weight: 600;
+	  font-size: 14px;
+}  
+.fieldz 
+{
+	  font-family: Arial;
+	  color: #CCCCCC;
+	  font-weight: 400;
+	  font-size: 11px;
+}
+.cTitle  
+{
+font-family : Arial;
+color : #333366;
+font-weight : 700;
+font-size : 25px;
+}
+.dTitle  
+{
+font-family : Arial;
+color : #CC9933;
+font-weight : 700;
+font-size : 22px;
+}  
+.berryTitle  
+{
+font-family : Arial;
+color : #663366;
+font-weight : 600;
+font-size : 18px;
+}    
+.helpTitle   
+{
+font-family : Arial;
+color : #336666;
+font-weight : 600;
+font-size : 18px;
+}
+.helpText   {
+font-family : Arial;
+color : #000000;
+font-weight : 400;
+font-size : 12px;
+}  
+.helpNav   {
+font-family : Arial;
+color : #336666;
+font-weight : 500;
+font-size : 14px;
+}  
+.baTitle  {
+font-family : Arial;
+color : #660033;
+font-weight : 700;
+font-size : 25px;
+}
+.aTitle  {
+font-family : Arial;
+color : #000000;
+font-weight : 700;
+font-size : 18px;
+}
+#AcrossTop {
+	position:absolute;
+	top : 0px;
+	left : 0px;
+	height : 80px;
+	width : 792px;
+	z-index:3;
+
+	background-color: #FFFFFF;
+	layer-background-color: #FFFFFF;
+}
+#LeftNav
+{
+	position: absolute;
+	top: 62px;
+	left: 0px;
+	width: 168px;
+	z-index : 4;
+	font-size: 10px;
+	height : 350px;
+	layer-background-color: #FFFFFF;
+}  
+#LeftNavTop
+{
+	position: absolute;
+	top: 27px;
+	left: 0px;
+	width: 187px;
+	z-index : 3;
+	font-size: 10px;
+	height : 35px;
+	background-color: #FFFFFF;
+	layer-background-color: #FFFFFF;
+}
+#help {
+	position:absolute;
+	top : 45px;
+	left : 750px;
+	height : 30px;
+	width : 790px;
+	z-index:3;
+}
+
+
+#LeftSide {
+	position:absolute;
+	top:100px;
+	left:0px;
+	height:310px;
+	width:165px;
+	z-index : 1;
+	background-color: #FFFFFF;
+	layer-background-color: #FFFFFF;
+}
+#BAAcrossTop {
+	position:absolute;
+	top : 0px;
+	left : 0px;
+	height : 80px;
+	width : 790px;
+	z-index:3;
+	background-color: #FFFFFF;
+	layer-background-color: #FFFFFF;
+}  
+#BALeftSide {
+	position:absolute;
+	top : 80px;
+	left : 0px;
+	height : 308px;
+	width : 165px;
+	z-index:1;
+	background-color: #FFFFFF;
+	layer-background-color: #FFFFFF;
+}  
+#NavSide {
+	position:absolute;
+	top : 119px;
+	left : 10px;
+	height : 305px;
+	width : 140px;
+	z-index:3;
+}
+#theCalendar {
+	position:absolute;
+	top : 100px;
+	left : 195px;
+	width : 570px;
+	z-index:3;
+}  
+#Calendar {
+	position:absolute;
+	top : 20px;
+	left : 30px;
+	z-index:3;
+}
+#BaCalendar {
+	position:absolute;
+	top : 20px;
+	left : 30px;
+	z-index:3;
+} 
+#reqlinks {
+
+	position:absolute;
+	top : 0;
+	left : 0;
+	height: 20;
+	z-index:10;
+}  
+.mainPage{
+	background-repeat : no-repeat;
+	background-image : url(/eventcal/images/caltop.gif);
+	color:black;
+	background-color : #ffffff;
+}   
+.BAmainPage{
+	background-repeat : no-repeat;
+	background-image : url(/eventcal/images/batop.gif);
+	color:black;
+	background-color : #ffffff;
+}   
+
+

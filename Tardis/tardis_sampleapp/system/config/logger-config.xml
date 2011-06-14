@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<config>
+	<params>	
+		<!-- Error severity levels that trigger a notification - (List of strings) -->
+		<notifylevel>Fatal,Error</notifylevel>
+		<!-- List of email addresses that notification will send to - (List of email addresses - comma delimited) -->
+		<notifyemails>shawn.gorrell@atl.frb.org</notifyemails>
+		<!-- Error message mail from field -->
+		<notifyfrom>shawn.gorrell@atl.frb.org</notifyfrom>
+		<!-- Maximum number of error messages to be sent, to prevent spamming yourself - (integer) -->
+		<notifymaxmessages>5</notifymaxmessages>
+	</params>
+</config>

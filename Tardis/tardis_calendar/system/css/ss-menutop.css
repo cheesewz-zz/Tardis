@@ -1,0 +1,145 @@
+#ignore {}
+
+#nav, #nav ul {				/* all lists */
+	padding: 0;	/* remove indent */
+	margin: 0;					/* remove indent */
+	list-style: none;			/* remove bullets */
+	list-style-image: none;		/* remove bullets */
+	line-height: 1;				/* default line height */
+}
+#nav {
+	padding: 1px 0px 0px 3px;	/* set padding so menu aligned on the page */
+}
+#nav a {					/* all links*/
+	padding: 4px 3px 4px 5px;	/* padding */
+	display: block;				/* makes the links extend over the whole li */
+	text-decoration: none;		/* no underline */
+} 
+#nav a:link, #nav a:visited { /* top level links - inactive */
+	color: #FFFFFF;				/* text color */
+	background: #003399;		/* background */
+} 
+#nav a:active, #nav a:hover { /* top level links - active */
+	color: #003399;				/* text color */
+	background: #FFCC66;		/* background */
+}
+
+#nav li {					/* all lists */
+	float: left;				/* float to the left */
+	list-style: none;			/* remove bullets */
+	list-style-image: none;		/* remove bullets */
+	font-size: 8pt;			/* use un-resizable text for menus because width is static */
+	letter-spacing: 1px;
+}
+#nav li li {					/* all lists */
+	float: left;				/* float to the left */
+	list-style: none;			/* remove bullets */
+	list-style-image: none;		/* remove bullets */
+	font-size: 10pt;			/* use un-resizable text for menus because width is static */
+	letter-spacing: 0px;
+}
+
+#nav li.top1, #nav li.top1 a {	/* top level list - item 1 */
+	width: 50px;				/* width of menu item */
+}
+#nav li.top2, #nav li.top2 a {	/* top level list - item 2 */
+	width: 40px;				/* width of menu item */
+}
+#nav li.top3, #nav li.top3 a {	/* top level list - item 3 */
+	width: 80px;				/* width of menu item */
+}
+#nav li.top4, #nav li.top4 a {	/* top level list - item 4 */
+	width: 73px;				/* width of menu item */
+}
+#nav li.top5, #nav li.top5 a {	/* top level list - item 5 */
+	width: 82px;				/* width of menu item */
+}
+#nav li.top6, #nav li.top6 a {	/* top level list - item 6 */
+	width: 50px;				/* width of menu item */
+}
+#nav li.top7, #nav li.top7 a {	/* top level list - item 7 */
+	width: 82px;				/* width of menu item */
+}
+#nav li.top8, #nav li.top8 a {	/* top level list - item 8 */
+	width: 60px;				/* width of menu item */
+}
+#nav li.top9, #nav li.top9 a {	/* top level list - item 9 */
+	width: 80px;				/* width of menu item */
+}
+
+#nav li ul {				/* all lower level lists */
+	position: absolute;			/* position is absolute so that it is in relation to the other menu items */
+	width: 160px;				/* drop-down list width */
+	left: -999em;				/* using left instead of display to hide menus because display: none isn't read by screen readers */
+}
+
+#nav li ul a {				/* all lower level links */
+	width: 160px;				/* width of lower level menu item */
+} 
+#nav li ul a:link, #nav li ul a:visited { /* 2nd level links - inactive */
+	width: 160px;				/* width of lower level menu item */
+	color: #4e4325;				/* text color */
+	background: white;			/* background */
+	border-bottom: 1px #B1D1D1 solid;
+} 
+#nav li ul li ul a:link, #nav li ul li ul a:visited { /* 3rd level links - inactive */
+	width: 160px;				/* width of lower level menu item */
+	color: #4e4325;				/* text color */
+	background: ivory;		/* background */
+	border-bottom: 1px #B1D1D1 solid;
+} 
+#nav li ul li ul li ul a:link, #nav li ul li ul li ul a:visited { /* 4th level links - inactive */
+	width: 160px;				/* width of lower level menu item */
+	color: #4e4325;				/* text color */
+	background: #f6f6ca;		/* background */
+	border-bottom: 1px #B1D1D1 solid;
+} 
+#nav li ul a:active, #nav li ul a:hover, 
+#nav li ul li ul a:active, #nav li ul li ul a:hover, 
+#nav li ul li ul li ul a:active, #nav li ul li ul li ul a:hover{ /* all lower level links - active */
+	width: 160px;				/* width of lower level menu item */
+	color: #003399;				/* text color */
+	background: #CDE6FF;		/* background */
+	border-bottom: 1px #B1D1D1 solid;
+}
+
+#nav li ul {				/* 2nd level lists */
+	border: 1px #3366CC solid;
+}
+#nav li ul ul {				/* third level lists */
+	margin: -22px 0 0 160px;	/* position relative to the last menu item*/
+								/* -22 moves it up even with the top and 175 moves it to the right the width */
+	border: 1px #183EB2 solid;
+}
+#nav li ul ul ul {				/* fourth level lists */
+	margin: -22px 0 0 -160px;	/* position relative to the last menu item*/
+								/* -22 moves it up even with the top and -180 moves it to the left the width */
+	border: 1px #0E2A81 solid;
+}
+
+#nav li:hover ul ul, 
+#nav li:hover ul ul ul, 
+#nav li.sfhover ul ul, 
+#nav li.sfhover ul ul ul {	/* position when lists are hidden */
+	left: -999em;
+}
+
+#nav li:hover ul, 
+#nav li li:hover ul, 
+#nav li li li:hover ul, 
+#nav li.sfhover ul, 
+#nav li li.sfhover ul, 
+#nav li li li.sfhover ul {	/* lists nested under hovered list items */
+	left: auto;
+}
+
+#content {
+	clear: left;	/* have to clear the content below the lists because the lists are floated */
+}
+
+#nav li.notlink a:link, #nav li.notlink a:visited, #nav li.notlink a:active, #nav li.notlink a:hover {
+	width: 160px;				/* width of lower level menu item */
+	color: #FF6600;				/* text color */
+	background: #d2daa8;		/* background */
+	border-bottom: 1px #B1D1D1 solid;
+}

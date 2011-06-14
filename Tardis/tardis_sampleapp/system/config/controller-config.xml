@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<config>	
+	<userManager>
+		<!-- Instance location for the manager component -->
+	  	<cfcinstance>session.usermanObj</cfcinstance>	 
+    	<!-- Callback statuses -->
+		<addusersuccess>/tardis_sampleapp/?action=view.viewusers</addusersuccess>
+		<addusererror>/tardis_sampleapp/?action=view.error</addusererror>
+		<updateusersuccess>/tardis_sampleapp/?action=view.viewusers</updateusersuccess>
+		<updateusererror>/tardis_sampleapp/?action=view.error</updateusererror>			
+		<deleteusersuccess>/tardis_sampleapp/?action=view.viewusers</deleteusersuccess>
+		<deleteusererror>/tardis_sampleapp/?action=view.error</deleteusererror>		  
+    </userManager>
+	
+	<viewManager>	 
+		<!-- View dispatch values -->   
+		<homepage>/tardis_sampleapp/dsp_homepage.cfm</homepage>		
+		<adduser>/tardis_sampleapp/dsp_adduser.cfm</adduser>
+		<updateuser>/tardis_sampleapp/dsp_updateuser.cfm</updateuser>	
+		<deleteuser>/tardis_sampleapp/dsp_deleteuser.cfm</deleteuser>
+		<viewusers>/tardis_sampleapp/dsp_viewusers.cfm</viewusers>		
+		<error>/tardis_sampleapp/dsp_error.cfm</error>	
+		<success>/tardis_sampleapp/dsp_success.cfm</success>		  
+    </viewManager>
+</config>

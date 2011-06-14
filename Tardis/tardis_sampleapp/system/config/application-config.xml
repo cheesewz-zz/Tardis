@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<globals>	
+	<!-- This is where you set your upload nameconflict value (OVERWRITE,MAKEUNIQUE)-->
+	<fileconflict>OVERWRITE</fileconflict>		
+	
+	<!-- These variables are paths to the components -->
+	<basecomponentpath>tardis_sampleapp.system.cfcomponents</basecomponentpath>
+	<cfcomponents>/tardis_sampleapp/system/cfcomponents/</cfcomponents>
+	
+	<!-- These variables are paths to the config files -->
+	<controllerconfigfile>controller-config.xml</controllerconfigfile>	
+	<datastoreconfigfile>datastore-config.xml</datastoreconfigfile>
+	<securityconfigfile>security-config.xml</securityconfigfile>	
+	<validationconfigfile>validation-config.xml</validationconfigfile>
+	<loggerconfigfile>logger-config.xml</loggerconfigfile>
+	
+	<!-- These variables are paths to the application -->
+	<virtualpath>/tardis_sampleapp/</virtualpath>	
+	<!-- This is where you would store UDF's -->
+	<cflibs>/tardis_sampleapp/system/cflibs/</cflibs>
+	<!-- This is where you would store customtags -->
+	<cftags>/tardis_sampleapp/system/cftags/</cftags>
+	<!-- This is where you would store layout pagelets -->
+	<cfpagelets>/tardis_sampleapp/system/cfpagelets/</cfpagelets>
+	<!-- This is where you would store cached files -->
+	<cfcache>/tardis_sampleapp/system/cfcache/</cfcache>	
+	<!-- This is where you would store cascading stylesheets -->
+	<css>/tardis_sampleapp/system/css/</css>	
+	<!-- This is where you would store javascript files -->
+	<js>/tardis_sampleapp/system/js/</js>	
+	
+	<!-- onError configuration -->
+	<!-- Send notification email onError - true/false -->
+	<errornotify>false</errornotify>
+	<!-- Error message mail to field - List of email addresses (comma delimited)-->
+	<errornotifyemails>shawn.gorrell@atl.frb.org</errornotifyemails>
+	<!-- Error message mail from field - string (email address) -->
+	<errornotifyfrom>shawn.gorrell@atl.frb.org</errornotifyfrom>	
+	<!-- Maximum number of error messages to be sent, to prevent spamming yourself - integer -->
+	<errornotifymaxmessages>5</errornotifymaxmessages>	
+		
+	<!-- These are application specific variables-->
+	<appsecdsn>CF_APP_SEC</appsecdsn>
+	<dsn>tardis_sampleapp</dsn>	
+</globals>

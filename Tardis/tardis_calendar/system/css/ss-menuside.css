@@ -1,0 +1,64 @@
+#ignore {}
+
+#vnav, #vnav ul { /* all lists */
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	width : 100%;
+}
+
+#vnav li { /* all list items */
+	position : relative;
+	float : right;
+	line-height : 1.25em;
+	margin-bottom : -1px;
+	width: 100%;
+}
+#vnav li li { /* second-level lists */
+	line-height : 1.25em;
+}
+
+#vnav li ul { /* second-level lists */
+	position : absolute;
+	right: +999em;
+	width : 150px;
+	margin-left : -150px;
+	margin-top : -2.15em;
+}
+
+#vnav li ul ul { /* third-and-above-level lists */
+	right: +999em;
+}
+
+#vnav li a {
+	display : block;
+	color: #3366CC;
+	font-weight : bold;
+	text-decoration : none;
+	background-image: url(/images/bg7.gif);
+	border : 1px solid #FFB23E;
+	padding : 5px;
+}
+
+#vnav li a:hover {
+	background-color: #FFCC66;
+	background-image: url(/images/bg12.gif);
+}
+
+#vnav li li a {
+	background-image: url(/images/bg9.gif);
+}
+
+#vnav li li a:hover {
+	background-color: #FFCC66;
+	background-image: url(/images/bg12.gif);
+}
+
+#vnav li:hover ul ul, #vnav li:hover ul ul ul, #vnav li.sfHover2 ul ul, #vnav li.sfHover2 ul ul ul {
+	right: +999em;
+}
+
+#vnav li:hover ul, #vnav li li:hover ul, #vnav li li li:hover ul, #vnav li.sfHover2 ul, #vnav li li.sfHover2 ul, #vnav li li li.sfHover2 ul { /* lists nested under hovered list items */
+	right: auto;
+}
+

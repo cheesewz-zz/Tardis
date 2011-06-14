@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<config>			
+	<!-- strict validation true/false. If true, any undefined validators will throw an exception -->
+	<strictvalidation>
+		<enabled>true</enabled>		
+	</strictvalidation>
+	<!-- wildcard validation true/false. If true, wildcard validators can be defined to handle validation of multiple fields -->
+	<wildcardvalidation>
+		<enabled>true</enabled>		
+	</wildcardvalidation>
+	<params>	
+		<!-- List of bad words for SQL Injection -->
+		<sqlexcludedfields>ACTION,CALLBACKTYPE,COMPONENTMETHOD,CONTROLLER,FIELDNAMES,SUBMIT,REQUESTTOKEN,REMOTEMETHOD</sqlexcludedfields>
+		<!-- List of bad words for SQL Injection -->
+		<sqlpatterns>CHAR,DECLARE,CAST,EXEC,EXECUTE,SP_SQLEXECUTE,SELECT,INSERT,UPDATE,DELETE,DROP,--,ALTER,XP_</sqlpatterns>
+		<!-- List of bad words for TAGS -->
+		<badtags>STYLE,SCRIPT,OBJECT,APPLET,EMBED,FORM,LAYER,ILAYER,FRAME,IFRAME,FRAMESET,PARAM,META</badtags>
+		<!-- List of bad words for EVENTS -->
+		<badevents>.toString,:expr,:expression,.fromCharCode,String.,.cookie,vbscript:,onLoad,onClick,onDblClick,onKeyDown,onKeyPress,onKeyUp,onMouseDown,onMouseOut,onMouseUp,onMouseOver,onBlur,onChange,onFocus,onSelect,javascript:</badevents>
+		<!-- Mode for handling found bad items: replace|strip -->
+		<mode>replace</mode>
+		<!-- Value to use for replacement -->
+		<stringreplacement>INVALID</stringreplacement>
+	</params>
+	<validators>
+		<!-- Sample validators. Feel free to add, modify, remove -->
+		<!-- Values must be valid REGEX patterns -->
+		<isemail>^[a-zA-Z_0-9-'\+~]+(\.[a-zA-Z_0-9-'\+~]+)*@([a-zA-Z_0-9-]+\.)+[a-zA-Z]{2,7}$</isemail>
+    	<isssn>^[0-9]{3}(-| )[0-9]{2}(-| )[0-9]{4}$</isssn>
+		<isurl>^((http|https|ftp|file)\:\/\/([a-zA-Z0-0]*:[a-zA-Z0-0]*(@))?[a-zA-Z0-9-\.]+(\.[a-zA-Z]{2,3})?(:[a-zA-Z0-9]*)?\/?([a-zA-Z0-9-\._\?\,\'\/\+&amp;%\$#\=~])*)|((mailto)\:[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*@([a-zA-Z0-9-]+\.)+[a-zA-Z0-9]{2,7})|((news)\:[a-zA-Z0-9\.]*)$</isurl>
+		<isphone>^(((1))?[ ,\-,\.]?([\\(]?([1-9][0-9]{2})[\\)]?))?[ ,\-,\.]?([^0-1]){1}([0-9]){2}[ ,\-,\.]?([0-9]){4}(( )((x){0,1}([0-9]){1,5}){0,1})?$</isphone>
+		<iszipcode>^\d{5}(-\d{4})?$</iszipcode>
+		<iscreditcard>^((4\d{3})|(5[1-5]\d{2})|(6011))-?\d{4}-?\d{4}-?\d{4}|3[4,7]\d{13}$</iscreditcard>
+		<iscfuuid>^[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{16}$</iscfuuid>
+	</validators>
+	<datavalidation>
+		<id>
+			<!-- validate: (empty string) | binary | xml | alphanumeric | string | numeric | integer | float | boolean | date -->
+			<validate>string</validate>		
+			<!-- validatetype: (empty string) | builtin | regex, | userdefined -->	
+			<validatetype>regex</validatetype>
+			<!-- validatemethod: (empty string) | named method | named regex (must match list of validators above) -->	
+			<validatemethod>iscfuuid</validatemethod>
+			<!-- maxlength: (empty string) | integer -->	
+			<maxlength>35</maxlength>
+			<!-- minlength: (empty string) | integer -->	
+			<minlength>1</minlength>
+			<!-- maxvalue: (empty string) | numeric -->	
+			<maxvalue></maxvalue>
+			<!-- minvalue: (empty string) | numeric -->	
+			<minvalue></minvalue>			
+			<!-- allowhtml: true|false -->	
+			<allowhtml>false</allowhtml>	
+			<!-- allowedtags: (emptystring)| comma delimited list of tags with no <> -->	
+			<allowedtags></allowedtags>				
+			<!-- sqlsafe: true|false -->	
+			<sqlsafe>false</sqlsafe>	
+			<!-- scriptsafe: true|false -->	
+			<scriptsafe>false</scriptsafe>
+			<!-- trimvalue: true|false -->	
+			<trimvalue>false</trimvalue>
+			<!-- htmleditvalue: true|false -->	
+			<htmleditvalue>false</htmleditvalue>
+		</id>
+		<firstname>
+			<!-- validate: (empty string) | binary | xml | alphanumeric | string | numeric | integer | float | boolean | date -->
+			<validate>string</validate>		
+			<!-- validatetype: (empty string) | builtin | regex, | userdefined -->	
+			<validatetype>builtin</validatetype>
+			<!-- validatemethod: (empty string) | named method | named regex (must match list of validators above) -->	
+			<validatemethod></validatemethod>
+			<!-- maxlength: (empty string) | integer -->	
+			<maxlength>255</maxlength>
+			<!-- minlength: (empty string) | integer -->	
+			<minlength>1</minlength>
+			<!-- maxvalue: (empty string) | numeric -->	
+			<maxvalue></maxvalue>
+			<!-- minvalue: (empty string) | numeric -->	
+			<minvalue></minvalue>	
+			<!-- allowhtml: true|false -->	
+			<allowhtml>false</allowhtml>	
+			<!-- allowedtags: (emptystring)| comma delimited list of tags with no <> -->	
+			<allowedtags></allowedtags>				
+			<!-- sqlsafe: true|false -->	
+			<sqlsafe>false</sqlsafe>	
+			<!-- scriptsafe: true|false -->	
+			<scriptsafe>false</scriptsafe>
+			<!-- trimvalue: true|false -->	
+			<trimvalue>false</trimvalue>
+			<!-- htmleditvalue: true|false -->	
+			<htmleditvalue>false</htmleditvalue>		
+		</firstname>
+		<lastname>
+			<!-- validate: (empty string) | string | numeric | integer | float | boolean | date -->
+			<validate>string</validate>		
+			<!-- validatetype: (empty string) | builtin | regex, | userdefined -->	
+			<validatetype>builtin</validatetype>
+			<!-- validatemethod: (empty string) | named method | named regex -->	
+			<validatemethod></validatemethod>
+			<!-- maxlength: (empty string) | integer -->	
+			<maxlength></maxlength>
+			<!-- minlength: (empty string) | integer -->	
+			<minlength>1</minlength>
+			<!-- maxvalue: (empty string) | numeric -->	
+			<maxvalue></maxvalue>
+			<!-- minvalue: (empty string) | numeric -->	
+			<minvalue></minvalue>
+			<!-- allowhtml: true|false -->	
+			<allowhtml>true</allowhtml>	
+			<!-- allowedtags: (emptystring)| comma delimited list of tags with no <> -->	
+			<allowedtags>p</allowedtags>				
+			<!-- sqlsafe: true|false -->	
+			<sqlsafe>true</sqlsafe>	
+			<!-- scriptsafe: true|false -->	
+			<scriptsafe>true</scriptsafe>
+			<!-- trimvalue: true|false -->	
+			<trimvalue>true</trimvalue>
+			<!-- htmleditvalue: true|false -->	
+			<htmleditvalue>true</htmleditvalue>
+		</lastname>
+		<brefresh>
+			<!-- validate: (empty string) | binary | xml | alphanumeric | string | numeric | integer | float | boolean | date -->
+			<validate>boolean</validate>		
+			<!-- validatetype: (empty string) | builtin | regex, | userdefined -->	
+			<validatetype>builtin</validatetype>
+			<!-- validatemethod: (empty string) | named method | named regex (must match list of validators above) -->	
+			<validatemethod></validatemethod>
+			<!-- maxlength: (empty string) | integer -->	
+			<maxlength></maxlength>
+			<!-- minlength: (empty string) | integer -->	
+			<minlength></minlength>
+			<!-- maxvalue: (empty string) | numeric -->	
+			<maxvalue></maxvalue>
+			<!-- minvalue: (empty string) | numeric -->	
+			<minvalue></minvalue>			
+			<!-- allowhtml: true|false -->	
+			<allowhtml>false</allowhtml>	
+			<!-- allowedtags: (emptystring)| comma delimited list of tags with no <> -->	
+			<allowedtags></allowedtags>				
+			<!-- sqlsafe: true|false -->	
+			<sqlsafe>false</sqlsafe>	
+			<!-- scriptsafe: true|false -->	
+			<scriptsafe>false</scriptsafe>
+			<!-- trimvalue: true|false -->	
+			<trimvalue>false</trimvalue>
+			<!-- htmleditvalue: true|false -->	
+			<htmleditvalue>false</htmleditvalue>
+		</brefresh>
+		<action>
+			<!-- validate: (empty string) | binary | xml | alphanumeric | string | numeric | integer | float | boolean | date -->
+			<validate>string</validate>		
+			<!-- validatetype: (empty string) | builtin | regex, | userdefined -->	
+			<validatetype>builtin</validatetype>
+			<!-- validatemethod: (empty string) | named method | named regex (must match list of validators above) -->	
+			<validatemethod></validatemethod>
+			<!-- maxlength: (empty string) | integer -->	
+			<maxlength></maxlength>
+			<!-- minlength: (empty string) | integer -->	
+			<minlength></minlength>
+			<!-- maxvalue: (empty string) | numeric -->	
+			<maxvalue></maxvalue>
+			<!-- minvalue: (empty string) | numeric -->	
+			<minvalue></minvalue>			
+			<!-- allowhtml: true|false -->	
+			<allowhtml>false</allowhtml>	
+			<!-- allowedtags: (emptystring)| comma delimited list of tags with no <> -->	
+			<allowedtags></allowedtags>				
+			<!-- sqlsafe: true|false -->	
+			<sqlsafe>false</sqlsafe>	
+			<!-- scriptsafe: true|false -->	
+			<scriptsafe>false</scriptsafe>
+			<!-- trimvalue: true|false -->	
+			<trimvalue>false</trimvalue>
+			<!-- htmleditvalue: true|false -->	
+			<htmleditvalue>false</htmleditvalue>
+		</action>
+		<requesttoken>
+			<!-- validate: (empty string) | binary | xml | alphanumeric | string | numeric | integer | float | boolean | date -->
+			<validate>string</validate>		
+			<!-- validatetype: (empty string) | builtin | regex, | userdefined -->	
+			<validatetype>regex</validatetype>
+			<!-- validatemethod: (empty string) | named method | named regex (must match list of validators above) -->	
+			<validatemethod>iscfuuid</validatemethod>
+			<!-- maxlength: (empty string) | integer -->	
+			<maxlength>35</maxlength>
+			<!-- minlength: (empty string) | integer -->	
+			<minlength>1</minlength>
+			<!-- maxvalue: (empty string) | numeric -->	
+			<maxvalue></maxvalue>
+			<!-- minvalue: (empty string) | numeric -->	
+			<minvalue></minvalue>			
+			<!-- allowhtml: true|false -->	
+			<allowhtml>false</allowhtml>	
+			<!-- allowedtags: (emptystring)| comma delimited list of tags with no <> -->	
+			<allowedtags></allowedtags>				
+			<!-- sqlsafe: true|false -->	
+			<sqlsafe>false</sqlsafe>	
+			<!-- scriptsafe: true|false -->	
+			<scriptsafe>false</scriptsafe>
+			<!-- trimvalue: true|false -->	
+			<trimvalue>false</trimvalue>
+			<!-- htmleditvalue: true|false -->	
+			<htmleditvalue>false</htmleditvalue>
+		</requesttoken>
+		<callbacktype>
+			<!-- validate: (empty string) | string | numeric | integer | float | boolean | date -->
+			<validate>string</validate>		
+			<!-- validatetype: (empty string) | builtin | regex, | userdefined -->	
+			<validatetype>builtin</validatetype>
+			<!-- validatemethod: (empty string) | named method | named regex -->	
+			<validatemethod></validatemethod>
+			<!-- maxlength: (empty string) | integer -->	
+			<maxlength></maxlength>
+			<!-- minlength: (empty string) | integer -->	
+			<minlength></minlength>
+			<!-- maxvalue: (empty string) | numeric -->	
+			<maxvalue></maxvalue>
+			<!-- minvalue: (empty string) | numeric -->	
+			<minvalue></minvalue>
+			<!-- allowhtml: true|false -->	
+			<allowhtml>false</allowhtml>	
+			<!-- allowedtags: (emptystring)| comma delimited list of tags with no <> -->	
+			<allowedtags></allowedtags>				
+			<!-- sqlsafe: true|false -->	
+			<sqlsafe>true</sqlsafe>	
+			<!-- scriptsafe: true|false -->	
+			<scriptsafe>false</scriptsafe>
+			<!-- trimvalue: true|false -->	
+			<trimvalue>false</trimvalue>
+			<!-- htmleditvalue: true|false -->	
+			<htmleditvalue>false</htmleditvalue>
+		</callbacktype>
+		<componentmethod>
+			<!-- validate: (empty string) | string | numeric | integer | float | boolean | date -->
+			<validate>string</validate>		
+			<!-- validatetype: (empty string) | builtin | regex, | userdefined -->	
+			<validatetype>builtin</validatetype>
+			<!-- validatemethod: (empty string) | named method | named regex -->	
+			<validatemethod></validatemethod>
+			<!-- maxlength: (empty string) | integer -->	
+			<maxlength></maxlength>
+			<!-- minlength: (empty string) | integer -->	
+			<minlength></minlength>
+			<!-- maxvalue: (empty string) | numeric -->	
+			<maxvalue></maxvalue>
+			<!-- minvalue: (empty string) | numeric -->	
+			<minvalue></minvalue>
+			<!-- allowhtml: true|false -->	
+			<allowhtml>false</allowhtml>	
+			<!-- allowedtags: (emptystring)| comma delimited list of tags with no <> -->	
+			<allowedtags></allowedtags>				
+			<!-- sqlsafe: true|false -->	
+			<sqlsafe>true</sqlsafe>	
+			<!-- scriptsafe: true|false -->	
+			<scriptsafe>false</scriptsafe>
+			<!-- trimvalue: true|false -->	
+			<trimvalue>false</trimvalue>
+			<!-- htmleditvalue: true|false -->	
+			<htmleditvalue>false</htmleditvalue>
+		</componentmethod>
+		<submit>
+			<!-- validate: (empty string) | string | numeric | integer | float | boolean | date -->
+			<validate>string</validate>		
+			<!-- validatetype: (empty string) | builtin | regex, | userdefined -->	
+			<validatetype>builtin</validatetype>
+			<!-- validatemethod: (empty string) | named method | named regex -->	
+			<validatemethod></validatemethod>
+			<!-- maxlength: (empty string) | integer -->	
+			<maxlength></maxlength>
+			<!-- minlength: (empty string) | integer -->	
+			<minlength></minlength>
+			<!-- maxvalue: (empty string) | numeric -->	
+			<maxvalue></maxvalue>
+			<!-- minvalue: (empty string) | numeric -->	
+			<minvalue></minvalue>
+			<!-- allowhtml: true|false -->	
+			<allowhtml>false</allowhtml>	
+			<!-- allowedtags: (emptystring)| comma delimited list of tags with no <> -->	
+			<allowedtags></allowedtags>				
+			<!-- sqlsafe: true|false -->	
+			<sqlsafe>true</sqlsafe>	
+			<!-- scriptsafe: true|false -->	
+			<scriptsafe>false</scriptsafe>
+			<!-- trimvalue: true|false -->	
+			<trimvalue>false</trimvalue>
+			<!-- htmleditvalue: true|false -->	
+			<htmleditvalue>false</htmleditvalue>
+		</submit>
+		<remotemethod>
+			<!-- validate: (empty string) | string | numeric | integer | float | boolean | date -->
+			<validate>string</validate>		
+			<!-- validatetype: (empty string) | builtin | regex, | userdefined -->	
+			<validatetype>builtin</validatetype>
+			<!-- validatemethod: (empty string) | named method | named regex -->	
+			<validatemethod></validatemethod>
+			<!-- maxlength: (empty string) | integer -->	
+			<maxlength></maxlength>
+			<!-- minlength: (empty string) | integer -->	
+			<minlength></minlength>
+			<!-- maxvalue: (empty string) | numeric -->	
+			<maxvalue></maxvalue>
+			<!-- minvalue: (empty string) | numeric -->	
+			<minvalue></minvalue>
+			<!-- allowhtml: true|false -->	
+			<allowhtml>false</allowhtml>	
+			<!-- allowedtags: (emptystring)| comma delimited list of tags with no <> -->	
+			<allowedtags></allowedtags>				
+			<!-- sqlsafe: true|false -->	
+			<sqlsafe>true</sqlsafe>	
+			<!-- scriptsafe: true|false -->	
+			<scriptsafe>false</scriptsafe>
+			<!-- trimvalue: true|false -->	
+			<trimvalue>false</trimvalue>
+			<!-- htmleditvalue: true|false -->	
+			<htmleditvalue>false</htmleditvalue>
+		</remotemethod>
+		<controller>
+			<!-- validate: (empty string) | string | numeric | integer | float | boolean | date -->
+			<validate>string</validate>		
+			<!-- validatetype: (empty string) | builtin | regex, | userdefined -->	
+			<validatetype>builtin</validatetype>
+			<!-- validatemethod: (empty string) | named method | named regex -->	
+			<validatemethod></validatemethod>
+			<!-- maxlength: (empty string) | integer -->	
+			<maxlength></maxlength>
+			<!-- minlength: (empty string) | integer -->	
+			<minlength></minlength>
+			<!-- maxvalue: (empty string) | numeric -->	
+			<maxvalue></maxvalue>
+			<!-- minvalue: (empty string) | numeric -->	
+			<minvalue></minvalue>
+			<!-- allowhtml: true|false -->	
+			<allowhtml>false</allowhtml>	
+			<!-- allowedtags: (emptystring)| comma delimited list of tags with no <> -->	
+			<allowedtags></allowedtags>				
+			<!-- sqlsafe: true|false -->	
+			<sqlsafe>true</sqlsafe>	
+			<!-- scriptsafe: true|false -->	
+			<scriptsafe>false</scriptsafe>
+			<!-- trimvalue: true|false -->	
+			<trimvalue>false</trimvalue>
+			<!-- htmleditvalue: true|false -->	
+			<htmleditvalue>false</htmleditvalue>
+		</controller>
+		<file_afile>
+			<!-- validate: (empty string) | string | numeric | integer | float | boolean | date -->
+			<validate>string</validate>		
+			<!-- validatetype: (empty string) | builtin | regex, | userdefined -->	
+			<validatetype>builtin</validatetype>
+			<!-- validatemethod: (empty string) | named method | named regex -->	
+			<validatemethod></validatemethod>
+			<!-- maxlength: (empty string) | integer -->	
+			<maxlength></maxlength>
+			<!-- minlength: (empty string) | integer -->	
+			<minlength></minlength>
+			<!-- maxvalue: (empty string) | numeric -->	
+			<maxvalue></maxvalue>
+			<!-- minvalue: (empty string) | numeric -->	
+			<minvalue></minvalue>
+			<!-- allowhtml: true|false -->	
+			<allowhtml>false</allowhtml>	
+			<!-- allowedtags: (emptystring)| comma delimited list of tags with no <> -->	
+			<allowedtags></allowedtags>				
+			<!-- sqlsafe: true|false -->	
+			<sqlsafe>false</sqlsafe>	
+			<!-- scriptsafe: true|false -->	
+			<scriptsafe>false</scriptsafe>
+			<!-- trimvalue: true|false -->	
+			<trimvalue>false</trimvalue>
+			<!-- htmleditvalue: true|false -->	
+			<htmleditvalue>false</htmleditvalue>
+		</file_afile>
+		<fieldnames>
+			<!-- validate: (empty string) | string | numeric | integer | float | boolean | date -->
+			<validate>string</validate>		
+			<!-- validatetype: (empty string) | builtin | regex, | userdefined -->	
+			<validatetype>builtin</validatetype>
+			<!-- validatemethod: (empty string) | named method | named regex -->	
+			<validatemethod></validatemethod>
+			<!-- maxlength: (empty string) | integer -->	
+			<maxlength></maxlength>
+			<!-- minlength: (empty string) | integer -->	
+			<minlength></minlength>
+			<!-- maxvalue: (empty string) | numeric -->	
+			<maxvalue></maxvalue>
+			<!-- minvalue: (empty string) | numeric -->	
+			<minvalue></minvalue>
+			<!-- allowhtml: true|false -->	
+			<allowhtml>false</allowhtml>	
+			<!-- allowedtags: (emptystring)| comma delimited list of tags with no <> -->	
+			<allowedtags></allowedtags>				
+			<!-- sqlsafe: true|false -->	
+			<sqlsafe>false</sqlsafe>	
+			<!-- scriptsafe: true|false -->	
+			<scriptsafe>false</scriptsafe>
+			<!-- trimvalue: true|false -->	
+			<trimvalue>false</trimvalue>
+			<!-- htmleditvalue: true|false -->	
+			<htmleditvalue>false</htmleditvalue>
+		</fieldnames>
+		<method>
+			<!-- validate: (empty string) | string | numeric | integer | float | boolean | date -->
+			<validate>string</validate>		
+			<!-- validatetype: (empty string) | builtin | regex, | userdefined -->	
+			<validatetype>builtin</validatetype>
+			<!-- validatemethod: (empty string) | named method | named regex -->	
+			<validatemethod></validatemethod>
+			<!-- maxlength: (empty string) | integer -->	
+			<maxlength></maxlength>
+			<!-- minlength: (empty string) | integer -->	
+			<minlength></minlength>
+			<!-- maxvalue: (empty string) | numeric -->	
+			<maxvalue></maxvalue>
+			<!-- minvalue: (empty string) | numeric -->	
+			<minvalue></minvalue>
+			<!-- allowhtml: true|false -->	
+			<allowhtml>false</allowhtml>	
+			<!-- allowedtags: (emptystring)| comma delimited list of tags with no <> -->	
+			<allowedtags></allowedtags>				
+			<!-- sqlsafe: true|false -->	
+			<sqlsafe>false</sqlsafe>	
+			<!-- scriptsafe: true|false -->	
+			<scriptsafe>false</scriptsafe>
+			<!-- trimvalue: true|false -->	
+			<trimvalue>false</trimvalue>
+			<!-- htmleditvalue: true|false -->	
+			<htmleditvalue>false</htmleditvalue>
+		</method>
+	</datavalidation>
+	<wildcarddatavalidation>
+		<vargroup1>
+			<!-- validate: (empty string) | string | numeric | integer | float | boolean | date -->
+			<validate>string</validate>		
+			<!-- validatetype: (empty string) | builtin | regex, | userdefined -->	
+			<validatetype>builtin</validatetype>
+			<!-- validatemethod: (empty string) | named method | named regex -->	
+			<validatemethod></validatemethod>
+			<!-- maxlength: (empty string) | integer -->	
+			<maxlength></maxlength>
+			<!-- minlength: (empty string) | integer -->	
+			<minlength>1</minlength>
+			<!-- maxvalue: (empty string) | numeric -->	
+			<maxvalue></maxvalue>
+			<!-- minvalue: (empty string) | numeric -->	
+			<minvalue></minvalue>
+			<!-- allowhtml: true|false -->	
+			<allowhtml>true</allowhtml>	
+			<!-- allowedtags: (emptystring)| comma delimited list of tags with no <> -->	
+			<allowedtags>p</allowedtags>				
+			<!-- sqlsafe: true|false -->	
+			<sqlsafe>true</sqlsafe>	
+			<!-- scriptsafe: true|false -->	
+			<scriptsafe>true</scriptsafe>
+			<!-- trimvalue: true|false -->	
+			<trimvalue>true</trimvalue>
+			<!-- htmleditvalue: true|false -->	
+			<htmleditvalue>true</htmleditvalue>
+		</vargroup1>
+		<vargroup99>
+			<!-- validate: (empty string) | string | numeric | integer | float | boolean | date -->
+			<validate>numeric</validate>		
+			<!-- validatetype: (empty string) | builtin | regex, | userdefined -->	
+			<validatetype>builtin</validatetype>
+			<!-- validatemethod: (empty string) | named method | named regex -->	
+			<validatemethod></validatemethod>
+			<!-- maxlength: (empty string) | integer -->	
+			<maxlength></maxlength>
+			<!-- minlength: (empty string) | integer -->	
+			<minlength>1</minlength>
+			<!-- maxvalue: (empty string) | numeric -->	
+			<maxvalue></maxvalue>
+			<!-- minvalue: (empty string) | numeric -->	
+			<minvalue></minvalue>
+			<!-- allowhtml: true|false -->	
+			<allowhtml>false</allowhtml>	
+			<!-- allowedtags: (emptystring)| comma delimited list of tags with no <> -->	
+			<allowedtags></allowedtags>				
+			<!-- sqlsafe: true|false -->	
+			<sqlsafe>false</sqlsafe>	
+			<!-- scriptsafe: true|false -->	
+			<scriptsafe>false</scriptsafe>
+			<!-- trimvalue: true|false -->	
+			<trimvalue>true</trimvalue>
+			<!-- htmleditvalue: true|false -->	
+			<htmleditvalue>false</htmleditvalue>
+		</vargroup99>
+	</wildcarddatavalidation>
+</config>

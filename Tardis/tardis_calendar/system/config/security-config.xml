@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<config>	
+	<calendarManager>
+		<addevent>admin</addevent>
+		<updateevent>admin</updateevent>		
+		<deleteevent>admin</deleteevent>					
+    </calendarManager>
+	
+	<viewManager>	  
+		<calendar>admin</calendar>
+		<event>admin</event>
+		<help>admin</help>
+		<search>admin</search>
+		<advancedsearch>admin</advancedsearch>
+		<homepage>admin</homepage>
+		<menu>admin</menu>	
+		<error></error>		
+		<login></login>	
+		<logout></logout>	
+			
+		<addevent>admin</addevent>
+		<updateevent>admin</updateevent>	
+		<deleteevent>admin</deleteevent>	
+    </viewManager>
+	
+	<!-- Settings for encryption algorithm (AES,DES,DESEDE)-->	
+	<encryptionAlgorithm>
+		<algorithm>AES</algorithm>
+	</encryptionAlgorithm>
+	
+	<!-- Settings for encryption encoding (Hex, Base64, UU)-->	
+	<encryptionEncoding>
+		<encoding>Hex</encoding>
+	</encryptionEncoding>
+
+	<!-- Settings for encrypted values delimiter -->	
+	<encryptedDelimiterSettings>
+		<characterLength>10</characterLength>
+		<useNumbers>true</useNumbers>		
+		<useUpperCaseLetters>true</useUpperCaseLetters>
+		<useLowerCaseLetters>true</useLowerCaseLetters>		
+	</encryptedDelimiterSettings>
+	
+	<!-- Require request tokens for forms/url, with excludes for views -->
+	<requestTokens>
+		<requireFormRequestTokens>true</requireFormRequestTokens>
+		<requireURLRequestTokens>false</requireURLRequestTokens>
+		<URLRequestTokenExcludes>error,homepage</URLRequestTokenExcludes>
+	</requestTokens>
+</config>

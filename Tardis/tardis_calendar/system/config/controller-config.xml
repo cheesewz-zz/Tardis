@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<config>	
+	<calendarManager>
+		<!-- Instance location for the manager component -->
+	  	<cfcinstance>session.calendarmanObj</cfcinstance>	
+
+		<addeventsuccess>/tardis_calendar/admin/index.cfm?action=view.calendar</addeventsuccess>
+		<addeventerror>/tardis_calendar/admin/dsp_event_add.cfm</addeventerror>
+				
+		<updateeventsuccess>/tardis_calendar/admin/index.cfm?action=view.calendar</updateeventsuccess>
+		<updateeventerror>/tardis_calendar/admin/dsp_event_update.cfm</updateeventerror>
+		
+		<deleteeventsuccess>/tardis_calendar/admin/index.cfm?action=view.calendar</deleteeventsuccess>
+		<deleteeventerror>/tardis_calendar/admin/dsp_event_delete.cfm</deleteeventerror>					  
+    </calendarManager>
+	
+	<viewManager>	
+		<calendar>/tardis_calendar/admin/calendar.cfm</calendar>	
+		<event>/tardis_calendar/admin/dsp_event.cfm</event> 
+		<help>/tardis_calendar/admin/dsp_help.cfm</help> 
+		<search>/tardis_calendar/admin/dsp_search.cfm</search> 
+		<advancedsearch>/tardis_calendar/admin/dsp_advancedsearch.cfm</advancedsearch> 
+		<homepage>/tardis_calendar/admin/dsp_menu.cfm</homepage>	
+		<menu>/tardis_calendar/admin/dsp_menu.cfm</menu>				
+		
+		<error>/tardis_calendar/admin/dsp_error.cfm</error>				
+
+		<login>/tardis_calendar/admin/dsp_login.cfm</login>		
+		<logout>/tardis_calendar/admin/logout.cfm</logout>		
+	
+		<addevent>/tardis_calendar/admin/dsp_event_add.cfm</addevent>		
+		<updateevent>/tardis_calendar/admin/dsp_event_update.cfm</updateevent>			
+		<deleteevent>/tardis_calendar/admin/dsp_event_delete.cfm</deleteevent>						  
+    </viewManager>
+</config>

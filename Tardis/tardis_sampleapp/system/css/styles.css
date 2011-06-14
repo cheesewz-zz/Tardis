@@ -1,0 +1,35 @@
+A:Active {
+	Color: #333366;
+	Font-Weight: normal;
+	Text-Decoration: underline;
+	font-size: 11px;
+}
+
+A:Visited {
+	Color: #666666;
+	Font-Weight: normal;
+	Text-Decoration: underline;
+ 	font-size: 11px;
+}
+
+A:Hover {
+	Color: #000000;
+	Font-Weight: normal;
+	Text-Decoration: underline;
+	font-size: 11px;
+}	
+
+A:link {
+	Color: #333366;
+	Font-Weight: normal;
+	Text-Decoration: underline;
+	font-size: 11px;
+}
+
+body {
+	color: #000000;
+	font-family: Verdana;
+	font-Weight: normal;
+	font-size: 11px;
+}
+

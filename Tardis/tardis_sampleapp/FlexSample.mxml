@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.macromedia.com/2003/mxml" 
+	themeColor="haloBlue" 
+	pageTitle="Tardis Flex Sample Form" >
+	
+	<mx:Script>
+	var command;
+	var commandresponse;
+	var errorresponse;
+
+	<![CDATA[
+		
+		private function doFault(event:Object):Void {
+			alert("Error invoking RemoteObject: " + event.fault.faultstring);
+		}
+		
+		private function executeCommand():Void{
+			command = new Object();
+			command.controller = 'FrontController';
+			command.method = 'POST';
+			command.remotemethod = 'userManager';
+			command.componentmethod = 'addUser';
+			command.callbacktype = 'service';
+			command.action = 'form.adduser';
+			command.firstname = firstName.text;
+			command.lastname = lastName.text;
+			commandService.doCommand(command);
+			commandService.getErrorData();
+		}
+		
+		private function processCommand(result):Void {
+			commandresponse=result;
+		}		
+		
+		private function processError(result):Void {
+			errorresponse=result;
+		}
+	]]>
+	</mx:Script>	
+	
+	<mx:RemoteObject id="commandService" 
+		endpoint="http://f122w01.rb.win.frb.org/flashservices/gateway"  
+		source="CFApps.tardis_sampleapp.FlexProxy" 
+		showBusyCursor="true">
+	 	<mx:method name="doCommand" result="processCommand(event.result)" fault="doFault(event)"/> 
+		<mx:method name="getErrorData" result="processError(event.result)" fault="doFault(event)"/> 
+	</mx:RemoteObject>	
+	
+	<mx:Canvas width="550" height="400">
+		<mx:Form>		
+			<mx:FormItem label="First Name">
+				<mx:TextInput id="firstName" />
+			</mx:FormItem>
+			
+			<mx:FormItem label="Last Name">
+				<mx:TextInput id="lastName" />
+			</mx:FormItem>
+			
+			<mx:Button label="Submit" click="executeCommand()" />
+			
+			<mx:Text id="responseText" text="{commandresponse}" />		
+			<mx:Text id="errorresponseText" text="{errorresponse}" />	
+		</mx:Form>	
+	</mx:Canvas>
+</mx:Application>
