@@ -1,5 +1,4 @@
 <cfparam name="action" default="view.homepage">
-<cfset application.logObj.doLog("Information", "#request.requestKey# action = #action#")>
 
 <cftry>
 	<!--- Actions should all be a . delimited value, if not set error and dispatch the homepage --->
@@ -54,16 +53,17 @@
 			
 			<!--- Validate user access to view and dispatch view --->
 			<cfif application.secObj.userHasAccess("viewManager",thismapping)>
+			
+			
 				<!--- Process encrypted/unencrypted values and return for validation --->
 				<cfset urldata = application.secObj.processFields(url)>	
-				
+			
 				<!--- Process fields for sql,xss,html,trim and htmleditformat prior to validation --->
 				<cfset urldata = application.valObj.processInputData(urldata)>	
 			
 				<!--- Validate input from the url scope to make sure variables comply with rules --->
 				<cfif NOT(application.valObj.validateInputData(urldata))>
 					<cfset application.dsObj.setErrorData("Error. Invalid Data.")>
-				<cflog file="hofo" text="dispatching view to #thismapping#">	
 					<cfset application.fcObj.dispatchView("viewManager","error")>
 				</cfif>			
 			

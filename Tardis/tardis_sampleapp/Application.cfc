@@ -6,7 +6,7 @@
 	<cfset this.sessiontimeout = "#createtimespan(0,0,20,0)#">
 	<cfset this.applicationtimeout = "#createtimespan(0,8,0,0)#">
 		
-	<cfparam name="bRefresh" type="boolean" default="true">	
+	<cfparam name="bRefresh" type="boolean" default="false">	
 		
 	<cffunction name="onApplicationStart" output="false">
 		<cfset application.applicationpath = ExpandPath('.')>
@@ -46,9 +46,7 @@
 	
 	<cffunction name="onRequestStart" output="true">
 		<cfparam name="action" default="view.homepage">
-		<cfset request.requestKey = CreateUUID()>
-		<cflog file="#this.name#" type="Information" text="#request.requestKey# onRequestStart: BEGIN (#action#)">
-
+ 
 		<cfif bRefresh>
 			<!--- Re-intialize app configuration --->			
 			<cf_globals 
@@ -72,21 +70,18 @@
 			<cfset application.secObj.setEncryptedDelimiter()>	
 			
 			<cfset application.errormessagecount = 0>
-			
-			<cfoutput>#now()#<br></cfoutput>
 
 			<!--- Application specific --->
 			<cfobject type="component" name="session.usermanObj" component="tardis_sampleapp.system.cfcomponents.com.user.userManager">
 			<cfobject type="component" name="session.userDAOObj" component="tardis_sampleapp.system.cfcomponents.com.user.userDAO">
 			<!--- End Application specific --->
 		</cfif>				
-		
+
 		<!--- This stub is for example purposes only. 
 		The security component depends on the cflogin framework. 
 		Implement your authentication/authorization routine--->
 		
 		<cfset application.secObj.authenticate("codefoo","fighting","admin,public")>
-		<cfset application.logObj.doLog("Information", "#request.requestKey# onRequestStart: END (#action#)")>
 	</cffunction>	
 	<cffunction name="onError" output="true">
 		<cfargument name="exception" required="true" type="any" />

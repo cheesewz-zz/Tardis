@@ -10,7 +10,7 @@
 
 <layout:page>
 <!--- Form without file upload --->
-<cfform name="formwithoutfile" action="/tardis_sampleapp/" method="post" enctype="application/x-www-form-urlencoded">
+<form name="formwithoutfile" action="/tardis_sampleapp/" method="post" enctype="application/x-www-form-urlencoded">
 <input type="hidden" name="controller" value="FrontController">
 <input type="hidden" name="method" value="POST">
 <input type="hidden" name="remotemethod" value="userManager">
@@ -22,7 +22,7 @@
 <input type="text" name="lastname" value="<cfoutput>#aUserObj.getLastName()#</cfoutput>">
 <input type="hidden" name="requesttoken" value="<cfoutput>#application.secObj.issueRequestToken()#</cfoutput>">
 <input type="submit" name="Submit" value="update">
-</cfform>
+</form>
 <br>
 Error Data:
 <br>
